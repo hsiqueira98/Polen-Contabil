@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pólen Contábil – Assessoria Contábil Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ── GLOBAL MOUSE ILLUMINATION LAYER ── -->
+<div id="mouse-light"></div>
+
+<!-- ── PROGRESS BAR ── -->
+<div id="progress-bar"></div>
+
+<!-- ── CUSTOM CURSOR ── -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ░░░ FLOATING NAV ░░░ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo-wrap" onclick="scrollToId('#home')">
+      <img class="logo-img" src="/images/logo-polen.png" alt="Pólen Contábil">
+      <span class="logo-text">Pólen Contábil</span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#porques">Diferenciais</a></li>
+    </ul>
+
+    <a href="#contato" class="nav-cta" onclick="handleNavCta(event)">Contato</a>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ░░░ HOME ░░░ -->
+<section id="home">
+  <div class="hero-photo">
+    <img src="/images/bg-polen.jpg" alt="" id="heroImg">
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+
+      <div>
+        <div class="hero-eyebrow reveal">
+          <div class="hero-eyebrow-line"></div>
+          <span class="hero-eyebrow-text">Escritorio de Contabilidade · Colméia, TO</span>
+        </div>
+        <h1 class="hero-h1 reveal-blur d1">
+          A base sólida<br>para o seu<br><em>crescimento</em>
+        </h1>
+        <p class="hero-body reveal d2">
+          Transformamos a complexidade burocrática em estratégia de gestão. Há mais de uma década garantimos segurança fiscal e eficiência de capital para empresas que exigem excelência.
+        </p>
+        <div class="hero-actions reveal d3">
+          <a href="#contato" class="btn-primary">Solicitar Proposta</a>
+          <a href="#servicos" class="btn-ghost">Nossos Serviços</a>
+        </div>
+      </div>
+
+      <!-- Right: stat cards -->
+        <div class="hero-stats">
+          <div class="stat-card reveal">
+            <div class="stat-number" data-count="16">0</div>
+            <div class="stat-label">Anos de Experiência Local</div>
+          </div>
+          <div class="stat-card stat-card-featured reveal">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-count="98">0</span><span class="stat-percent">%</span>
+            </div>
+            <div class="stat-label">Satisfação dos Clientes</div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-hint-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ░░░ BARRIER — Home → Sobre ░░░ -->
+<div class="barrier" style="--barrier-from: var(--c-base); --barrier-to: var(--c-base);">
+  <div class="barrier-gem"></div>
+</div>
+
+<!-- ░░░ SOBRE ░░░ -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+
+      <div class="sobre-photo-wrap reveal-left">
+        <img src="/images/bg-polen.jpg" alt="Fachada Pólen Contábil">
+        <div class="sobre-badge reveal-scale d3">
+          <span class="sobre-badge-num">16+</span>
+          <span class="sobre-badge-txt">Anos no mercado</span>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label reveal">Sobre o Escritório</span>
+        <h2 class="section-h2 reveal-blur d1">Contabilidade como ferramenta de <em>gestão</em></h2>
+        <p class="sobre-text reveal d2">
+          A contabilidade é a fonte de informação indispensável para que o empreendimento cresça seguro. Na <strong>Pólen Contábil</strong>, sob a liderança de <strong>Silvana Siqueira</strong>, fornecemos dados reais sobre custos, giro de capital e planejamento fiscal.
+        </p>
+        <p class="sobre-text reveal d3">
+          Participamos do desenvolvimento da sua empresa desde a constituição, garantindo regularidade total perante a Receita Federal, INSS e Prefeituras — para que você foque no que realmente importa: o seu negócio.
+        </p>
+        <div class="sobre-pills reveal d4">
+          <span class="pill"><span class="pill-dot"></span>Regularidade Fiscal</span>
+          <span class="pill"><span class="pill-dot"></span>Planejamento Tributário</span>
+          <span class="pill"><span class="pill-dot"></span>Constituição de Empresas</span>
+          <span class="pill"><span class="pill-dot"></span>Gestão de Capital</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ BARRIER — Sobre → Serviços ░░░ -->
+<div class="barrier" style="--barrier-from: var(--c-base); --barrier-to: var(--c-layer1);">
+  <div class="barrier-gem"></div>
+</div>
+
+<!-- ░░░ SERVIÇOS ░░░ -->
+<section id="servicos">
+  <div class="container">
+    <div class="servicos-header">
+      <span class="section-label reveal" style="justify-content:center">Especialidades</span>
+      <h2 class="section-h2 reveal-blur d1" style="text-align:center">Soluções para cada <em>necessidade</em></h2>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card reveal d1">
+        <div class="service-icon-wrap">🏢</div>
+        <h3 class="service-title">Abertura de Empresas</h3>
+        <p class="service-desc">Do registro na Junta Comercial à regularização completa em todos os órgãos competentes.</p>
+      </div>
+      <div class="service-card reveal d2">
+        <div class="service-icon-wrap">📋</div>
+        <h3 class="service-title">Escrituração Fiscal</h3>
+        <p class="service-desc">Planejamento tributário inteligente para otimizar legalmente a carga de impostos da sua empresa.</p>
+      </div>
+      <div class="service-card reveal d3">
+        <div class="service-icon-wrap">👥</div>
+        <h3 class="service-title">Departamento Pessoal</h3>
+        <p class="service-desc">Gestão completa de folha de pagamento, encargos sociais e obrigações trabalhistas.</p>
+      </div>
+      <div class="service-card reveal d4">
+        <div class="service-icon-wrap">📈</div>
+        <h3 class="service-title">Consultoria Financeira</h3>
+        <p class="service-desc">Apoio na medição do retorno do capital investido e projeção de resultados futuros.</p>
+      </div>
+      <div class="service-card reveal d5">
+        <div class="service-icon-wrap">🔍</div>
+        <h3 class="service-title">Auditoria e Perícia</h3>
+        <p class="service-desc">Rigor técnico na avaliação de registros contábeis e demonstrações financeiras.</p>
+      </div>
+      <div class="service-card mais-card reveal d6">
+        <p class="mais-label">e mais...</p>
+        <p class="mais-sub">Regularização de MEI, IRPF, Certificados Digitais e Consultoria Societária.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ BARRIER — Serviços → Diferenciais ░░░ -->
+<div class="barrier" style="--barrier-from: var(--c-layer1); --barrier-to: var(--c-base);">
+  <div class="barrier-gem"></div>
+</div>
+
+<!-- ░░░ DIFERENCIAIS ░░░ -->
+<section id="porques">
+  <div class="container">
+    <div class="porques-inner">
+
+      <div class="porques-sticky reveal-left">
+        <span class="section-label">Por que escolher</span>
+        <h2 class="section-h2">O diferencial que<br>faz a <em>diferença</em></h2>
+        <p class="sobre-text" style="margin-top:1.2rem">
+          Mais do que números — entregamos clareza, segurança e estratégia para o seu negócio prosperar.
+        </p>
+        <a href="#contato" class="btn-primary" style="margin-top:2.2rem;display:inline-flex">Fale Conosco</a>
+      </div>
+
+      <div class="feature-list">
+        <div class="feature-item reveal d1">
+          <span class="feature-num">01</span>
+          <div>
+            <h4 class="feature-title">Acompanhamento personalizado</h4>
+            <p class="feature-desc">Cada cliente tem suas particularidades. Oferecemos atendimento dedicado, entendendo a fundo o contexto do seu negócio.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal d2">
+          <span class="feature-num">02</span>
+          <div>
+            <h4 class="feature-title">Compliance rigoroso</h4>
+            <p class="feature-desc">Conformidade total com Receita Federal, INSS e Prefeituras. Zero surpresas com fiscalizações ou autuações.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal d3">
+          <span class="feature-num">03</span>
+          <div>
+            <h4 class="feature-title">Visão estratégica</h4>
+            <p class="feature-desc">Não apenas registramos — analisamos. Dados reais sobre custos, giro e capital para decisões mais seguras.</p>
+          </div>
+        </div>
+        <div class="feature-item reveal d4">
+          <span class="feature-num">04</span>
+          <div>
+            <h4 class="feature-title">Presença local há 12 anos</h4>
+            <p class="feature-desc">Conhecemos profundamente o ambiente regulatório e empresarial de Guaraí e região do Tocantins.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ BARRIER — Diferenciais → Contato ░░░ -->
+<div class="barrier" style="--barrier-from: var(--c-base); --barrier-to: var(--c-layer1);">
+  <div class="barrier-gem"></div>
+</div>
+
+<!-- ░░░ CONTATO ░░░ -->
+<section id="contato">
+  <div class="container">
+    <div class="contato-grid">
+
+      <div class="reveal-left">
+        <span class="section-label">Contato Direto</span>
+        <h2 class="section-h2">Fale com um <em>especialista</em></h2>
+        <p class="sobre-text">Estamos prontos para atender suas necessidades e garantir o futuro do seu empreendimento.</p>
+        <div class="contact-info-list">
+          <div class="contact-info-item reveal d1">
+            <span class="contact-info-icon">📞</span>
+            <div>
+              <span class="contact-info-label">Telefone</span>
+              <span class="contact-info-value">(63) 3027-2993</span>
+            </div>
+          </div>
+          <div class="contact-info-item reveal d2">
+            <span class="contact-info-icon">✉️</span>
+            <div>
+              <span class="contact-info-label">E-mail</span>
+              <span class="contact-info-value">contato@polencontabil.com.br</span>
+            </div>
+          </div>
+          <div class="contact-info-item reveal d3">
+            <span class="contact-info-icon">📍</span>
+            <div>
+              <span class="contact-info-label">Endereço</span>
+              <span class="contact-info-value">Colméia – Tocantins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card reveal-right">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Nome</label>
+              <input type="text" class="form-input" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">E-mail</label>
+              <input type="email" class="form-input" placeholder="seu@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefone</label>
+            <input type="tel" class="form-input" placeholder="(00) 00000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Mensagem</label>
+            <textarea class="form-textarea" placeholder="Descreva brevemente sua necessidade..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Enviar Solicitação</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ FOOTER ░░░ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="logo-wrap">
+        <img class="logo-img" style="height:30px" src="/images/logo-polen.png" alt="Pólen Contábil">
+        <span class="logo-text" style="font-size:1.08rem">Pólen Contábil</span>
+      </div>
+      <p class="footer-copy">
+        © 2026 <em>|</em> Silvana Siqueira – CRC/TO: 005039 <em>|</em> Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
