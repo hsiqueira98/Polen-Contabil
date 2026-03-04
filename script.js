@@ -6,6 +6,23 @@
 
 'use strict';
 
+/* ═══════════════════════════════════════════════════════════════
+   THEME MANAGEMENT — Native CSS Support
+   (Logic handled by @media (prefers-color-scheme) in CSS)
+   ═══════════════════════════════════════════════════════════════ */
+/* 
+const updateTheme = () => {
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+};
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+updateTheme(); 
+*/
+
+const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+let isDarkMode = darkModeQuery.matches;
+darkModeQuery.addEventListener('change', e => isDarkMode = e.matches);
+
 /* ── ELEMENTS ───────────────────────────────────────────────── */
 const navbar      = document.getElementById('navbar');
 const navLinks    = document.getElementById('navLinks');
@@ -50,13 +67,19 @@ function lerpVal(a, b, t) { return a + (b - a) * t; }
 function updateIllumination() {
   const { r, g, b, outerAlpha } = glowLerp;
   const mx = mouseX, my = mouseY;
+  const isDark = isDarkMode;
+
+  /* Reduce glow intensity in light mode for legibility */
+  const intensityMult = isDark ? 1 : 0.4;
+  const outerAlphaFinal = outerAlpha * (isDark ? 1 : 0.3);
 
   if (mouseLight) {
+    mouseLight.style.mixBlendMode = isDark ? 'screen' : 'multiply';
     mouseLight.style.background = `
       radial-gradient(
         420px circle at ${mx}px ${my}px,
-        rgba(${r},${g},${b},0.08) 0%,
-        rgba(${r},${Math.round(g*0.7)},${Math.round(b*0.4)},0.025) 50%,
+        rgba(${r},${g},${b},${0.08 * intensityMult}) 0%,
+        rgba(${r},${Math.round(g*0.7)},${Math.round(b*0.4)},${0.025 * intensityMult}) 50%,
         transparent 80%
       )
     `;
@@ -65,8 +88,8 @@ function updateIllumination() {
     mouseLight2.style.background = `
       radial-gradient(
         900px circle at ${mx}px ${my}px,
-        rgba(${r},${g},${b},${outerAlpha}) 0%,
-        rgba(${r},${Math.round(g*0.6)},${Math.round(b*0.3)},0.01) 55%,
+        rgba(${r},${g},${b},${outerAlphaFinal}) 0%,
+        rgba(${r},${Math.round(g*0.6)},${Math.round(b*0.3)},${0.01 * intensityMult}) 55%,
         transparent 82%
       )
     `;
@@ -377,15 +400,20 @@ document.querySelectorAll(TILT_CARDS).forEach(card => {
       const proximity = Math.max(0, 1 - dist / 220);
       const finalOpacity = d.opacity + proximity * 0.55;
 
+      /* Darker gold for light mode visibility */
+      const r = isDarkMode ? 201 : 184;
+      const g = isDarkMode ? 168 : 134;
+      const b = isDarkMode ? 76  : 11;
+
       ctx.beginPath();
       ctx.arc(d.x, d.y, d.r + proximity * 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(201,168,76,${finalOpacity})`;
+      ctx.fillStyle = `rgba(${r},${g},${b},${finalOpacity})`;
       ctx.fill();
 
       if (proximity > 0.1) {
         ctx.beginPath();
         ctx.arc(d.x, d.y, (d.r + proximity * 1.2) * 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(226,194,122,${proximity * 0.12})`;
+        ctx.fillStyle = `rgba(${r+25},${g+26},${b+46},${proximity * 0.12})`;
         ctx.fill();
       }
     });
@@ -405,10 +433,16 @@ document.querySelectorAll(TILT_CARDS).forEach(card => {
           const mDist = Math.sqrt(mdx*mdx + mdy*mdy);
           const proximity = Math.max(0, 1 - mDist / 250);
           const alpha = (1 - dist / 130) * (0.04 + proximity * 0.18);
+          
+          /* Line color matching dots */
+          const r = isDarkMode ? 201 : 184;
+          const g = isDarkMode ? 168 : 134;
+          const b = isDarkMode ? 76  : 11;
+
           ctx.beginPath();
           ctx.moveTo(dots[i].x, dots[i].y);
           ctx.lineTo(dots[j].x, dots[j].y);
-          ctx.strokeStyle = `rgba(201,168,76,${alpha})`;
+          ctx.strokeStyle = `rgba(${r},${g},${b},${alpha})`;
           ctx.lineWidth = 0.5 + proximity * 0.8;
           ctx.stroke();
         }
