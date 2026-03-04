@@ -11,8 +11,9 @@
 </head>
 <body>
 
-<!-- ── GLOBAL MOUSE ILLUMINATION LAYER ── -->
+<!-- ── GLOBAL MOUSE ILLUMINATION LAYERS ── -->
 <div id="mouse-light"></div>
+<div id="mouse-light-2"></div>
 
 <!-- ── PROGRESS BAR ── -->
 <div id="progress-bar"></div>
@@ -34,6 +35,7 @@
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#porques">Diferenciais</a></li>
+      <li class="mobile-only"><a href="#contato">Contato</a></li>
     </ul>
 
     <a href="#contato" class="nav-cta" onclick="handleNavCta(event)">Contato</a>
@@ -50,6 +52,11 @@
     <img src="/images/bg-polen.jpg" alt="" id="heroImg">
   </div>
 
+  <!-- Ambient light orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
   <div class="container">
     <div class="hero-grid">
 
@@ -65,7 +72,7 @@
           Transformamos a complexidade burocrática em estratégia de gestão. Há mais de uma década garantimos segurança fiscal e eficiência de capital para empresas que exigem excelência.
         </p>
         <div class="hero-actions reveal d3">
-          <a href="#contato" class="btn-primary">Solicitar Proposta</a>
+          <a href="https://wa.me/556330272993" target="_blank" class="btn-primary">Solicitar Proposta</a>
           <a href="#servicos" class="btn-ghost">Nossos Serviços</a>
         </div>
       </div>
@@ -104,6 +111,7 @@
     <div class="sobre-grid">
 
       <div class="sobre-photo-wrap reveal-left">
+        <div class="sobre-photo-bg" aria-hidden="true"></div>
         <img src="/images/bg-polen.jpg" alt="Fachada Pólen Contábil">
         <div class="sobre-badge reveal-scale d3">
           <span class="sobre-badge-num">16+</span>
@@ -195,7 +203,7 @@
         <p class="sobre-text" style="margin-top:1.2rem">
           Mais do que números — entregamos clareza, segurança e estratégia para o seu negócio prosperar.
         </p>
-        <a href="#contato" class="btn-primary" style="margin-top:2.2rem;display:inline-flex">Fale Conosco</a>
+        <a href="https://wa.me/556330272993" target="_blank" class="btn-primary" style="margin-top:2.2rem;display:inline-flex">Fale Conosco</a>
       </div>
 
       <div class="feature-list">
@@ -248,20 +256,20 @@
         <h2 class="section-h2">Fale com um <em>especialista</em></h2>
         <p class="sobre-text">Estamos prontos para atender suas necessidades e garantir o futuro do seu empreendimento.</p>
         <div class="contact-info-list">
-          <div class="contact-info-item reveal d1">
+          <a href="https://wa.me/556330272993" target="_blank" class="contact-info-item reveal d1">
             <span class="contact-info-icon">📞</span>
             <div>
               <span class="contact-info-label">Telefone</span>
               <span class="contact-info-value">(63) 3027-2993</span>
             </div>
-          </div>
-          <div class="contact-info-item reveal d2">
+          </a>
+          <a href="mailto:contato@polencontabil.com.br" class="contact-info-item reveal d2">
             <span class="contact-info-icon">✉️</span>
             <div>
               <span class="contact-info-label">E-mail</span>
               <span class="contact-info-value">contato@polencontabil.com.br</span>
             </div>
-          </div>
+          </a>
           <div class="contact-info-item reveal d3">
             <span class="contact-info-icon">📍</span>
             <div>
@@ -314,6 +322,13 @@
     </div>
   </div>
 </footer>
+
+<!-- ── WHATSAPP FLOATING BUTTON ── -->
+<a href="https://wa.me/556330272993" target="_blank" id="whatsapp-float" title="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.411 0 .01 5.401.007 12.04c0 2.123.553 4.197 1.604 6.04L0 24l6.117-1.605A11.837 11.837 0 0012.044 24h.005c6.638 0 12.039-5.401 12.042-12.041a11.82 11.82 0 00-3.638-8.513" fill="currentColor"/>
+  </svg>
+</a>
 
 <script src="script.js"></script>
 </body>
