@@ -56,15 +56,12 @@ document.addEventListener('mousemove', e => {
 });
 
 function animateCursor() {
-  // Smooth follow logic for the custom arrow cursor
-  // Higher factor = less lag (0.4 is snappier than 0.25)
-  dotX += (mouseX - dotX) * 0.55;
-  dotY += (mouseY - dotY) * 0.55;
-
+  // Direct follow for instant response (no interpolation delay)
+  // This eliminates the "heavy" feeling completely
   if (cursorDot) {
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
   }
-
+  
   requestAnimationFrame(animateCursor);
 }
 animateCursor();
