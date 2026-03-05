@@ -11,16 +11,13 @@
 </head>
 <body>
 
-<!-- ── GLOBAL MOUSE ILLUMINATION LAYERS ── -->
-<div id="mouse-light"></div>
-<div id="mouse-light-2"></div>
+<!-- ── GLOBAL MOUSE ILLUMINATION LAYERS REMOVED ── -->
 
 <!-- ── PROGRESS BAR ── -->
 <div id="progress-bar"></div>
 
 <!-- ── CUSTOM CURSOR ── -->
 <div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
 
 <!-- ░░░ FLOATING NAV ░░░ -->
 <nav id="navbar">
@@ -38,6 +35,13 @@
       <li class="mobile-only"><a href="#contato">Contato</a></li>
     </ul>
 
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+      <!-- Sun Icon -->
+      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <!-- Moon Icon -->
+      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+
     <a href="#contato" class="nav-cta" onclick="handleNavCta(event)">Contato</a>
 
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -50,12 +54,10 @@
 <section id="home">
   <div class="hero-photo">
     <img src="images/bg-polen.jpg" alt="" id="heroImg">
+    <div class="hero-mask"></div>
   </div>
 
-  <!-- Ambient light orbs -->
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
+  <!-- Ambient light orbs REMOVED -->
 
   <div class="container">
     <div class="hero-grid">
