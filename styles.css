@@ -656,9 +656,9 @@ body.dark-mode .hero-photo::after {
 .hero-grid {
   display: grid;
   grid-template-columns: 1.3fr 0.7fr;
-  gap: 6rem;
+  gap: 4rem; /* Compacted from 6rem */
   align-items: center;
-  padding-block: 8rem 7rem;
+  padding-block: 6rem 5rem; /* Compacted from 8rem 7rem */
   position: relative; z-index: 3; /* Above mask */
 }
 
@@ -763,7 +763,7 @@ body.dark-mode .btn-ghost:hover { color: var(--gold-light); }
   background: var(--c-void); /* Solid white/cream for readability */
   border: 1px solid var(--gold-border);
   border-radius: var(--r-xl);
-  padding: 2.2rem 2.8rem;
+  padding: 1.6rem 2rem; /* Compacted */
   /* backdrop-filter removed for solid light card */
   position: relative; overflow: hidden;
   transition: transform 0.6s var(--ease), border-color 0.4s, box-shadow 0.6s, background-color 0.5s ease;
@@ -867,7 +867,7 @@ body.dark-mode .stat-label { color: var(--t-muted); }
    SOBRE
    ═══════════════════════════════════════════════════════════════ */
 #sobre {
-  padding-block: 12rem;
+  padding-block: 8rem; /* Compacted from 12rem */
   position: relative;
   background: var(--c-base);
   overflow: hidden;
@@ -888,7 +888,8 @@ body.dark-mode .stat-label { color: var(--t-muted); }
 .sobre-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 9rem; align-items: center;
+  gap: 5rem; /* Compacted from 9rem */
+  align-items: center;
 }
 
 .sobre-photo-wrap {
@@ -944,7 +945,7 @@ body.dark-mode .stat-label { color: var(--t-muted); }
   background: linear-gradient(145deg, var(--gold) 0%, var(--gold-mid) 60%, var(--gold-light) 100%);
   color: var(--c-void);
   border-radius: var(--r-lg);
-  padding: 1.7rem 2rem;
+  padding: 1.4rem 1.8rem; /* Compacted */
   text-align: center;
   box-shadow:
     0 28px 56px rgba(0,0,0,0.5),
@@ -1004,7 +1005,7 @@ body.dark-mode .sobre-text { color: var(--t-muted); }
    SERVIÇOS
    ═══════════════════════════════════════════════════════════════ */
 #servicos {
-  padding-block: 12rem;
+  padding-block: 8rem; /* Compacted from 12rem */
   position: relative;
   background: var(--c-layer1);
   overflow: hidden;
@@ -1027,18 +1028,18 @@ body.dark-mode .sobre-text { color: var(--t-muted); }
 }
 #servicos .container { position: relative; z-index: 1; }
 
-.servicos-header { text-align: center; margin-bottom: 6rem; }
+.servicos-header { text-align: center; margin-bottom: 4rem; } /* Compacted from 6rem */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.8rem;
+  gap: 1.5rem; /* Compacted from 1.8rem */
 }
 
 .service-card {
   background: var(--c-void); /* Solid background for light mode */
   border: 1px solid var(--c-warm-line);
   border-radius: var(--r-xl);
-  padding: 3rem;
+  padding: 2.2rem; /* Compacted from 3rem */
   position: relative; overflow: hidden;
   transition: transform 0.6s var(--ease), border-color 0.4s, box-shadow 0.6s, background 0.4s;
   cursor: default;
@@ -1147,7 +1148,7 @@ body.dark-mode .service-desc {
    DIFERENCIAIS
    ═══════════════════════════════════════════════════════════════ */
 #porques {
-  padding-block: 14rem; /* More spacing */
+  padding-block: 9rem; /* Compacted from 14rem */
   position: relative;
   background: var(--c-base);
   overflow: hidden;
@@ -1164,7 +1165,8 @@ body.dark-mode .service-desc {
 
 .porques-inner {
   display: grid; grid-template-columns: 0.9fr 1.1fr;
-  gap: 10rem; align-items: start;
+  gap: 6rem; /* Compacted from 10rem */
+  align-items: start;
 }
 .porques-sticky { position: sticky; top: calc(var(--nav-total) + 3rem); }
 .feature-list { display: flex; flex-direction: column; gap: 0.5rem; } /* Gap added */
@@ -1172,7 +1174,7 @@ body.dark-mode .service-desc {
 .feature-item {
   display: grid; grid-template-columns: 70px 1fr;
   gap: 2rem; align-items: start;
-  padding: 2.8rem 2rem; /* Increased padding */
+  padding: 2rem 1.5rem; /* Compacted */
   border-bottom: 1px solid var(--c-warm-line);
   transition: all 0.42s var(--ease);
   border-radius: var(--r-md);
@@ -1233,7 +1235,7 @@ body.dark-mode .feature-desc { color: var(--t-muted); }
    CONTATO
    ═══════════════════════════════════════════════════════════════ */
 #contato {
-  padding-block: 12rem;
+  padding-block: 8rem; /* Compacted from 12rem */
   position: relative;
   background: var(--c-layer1);
   overflow: hidden;
@@ -1250,7 +1252,8 @@ body.dark-mode .feature-desc { color: var(--t-muted); }
 
 .contato-grid {
   display: grid; grid-template-columns: 1fr 1.3fr;
-  gap: 8rem; align-items: start;
+  gap: 5rem; /* Compacted from 8rem */
+  align-items: start;
 }
 
 .contact-info-list {
@@ -1287,7 +1290,7 @@ body.dark-mode .feature-desc { color: var(--t-muted); }
   background: var(--c-void);
   border: 1px solid var(--gold-border);
   border-radius: var(--r-2xl);
-  padding: 4.5rem 4rem;
+  padding: 3.2rem 2.8rem; /* Compacted */
   /* No blur for light mode */
   position: relative; overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -1446,16 +1449,97 @@ footer::before {
   #sobre, #servicos, #porques, #contato { padding-block: 9rem; }
 }
 @media (max-width: 992px) {
-  .nav-inner { padding-inline: 1.5rem; }
+  /* Navbar Refactor for Mobile: Flexbox Layout (Robust & Harmonious) */
+  .nav-inner {
+    display: flex; /* Switched from Grid to Flex for better control */
+    align-items: center;
+    justify-content: flex-end; /* Align items to right */
+    gap: 1rem; /* Consistent 16px spacing between elements */
+    padding-inline: 1.5rem; /* 24px margin from edge (min 16px met) */
+  }
+
+  /* Logo pushes everything else to the right */
+  .logo-wrap {
+    margin-right: auto;
+  }
+  
   .nav-links:not(.open) { display: none; }
-  .hamburger { display: flex; }
+  
+  /* Reset margins */
+  .theme-toggle { margin: 0; }
+  
+  /* Hamburger positioning */
+  .hamburger { 
+    display: flex; 
+    margin-left: 0; 
+  }
+  
   .nav-cta { display: none; }
   .mobile-only { display: block; }
   .logo-text { font-size: 1.15rem; }
   .logo-img { height: 30px; }
 }
-@media (max-width: 768px) {
-  .nav-inner { padding-inline: 1.3rem; }
+@media (max-width: 480px) {
+  /* Mobile-Optimized Cards & Layout (320px - 480px) */
+  
+  /* Global spacing adjustment */
+  .container { width: calc(100% - 2rem); } /* 16px padding each side */
+  
+  /* Navbar specifics for very small screens */
+  .nav-inner { 
+    padding-inline: 1rem; /* 16px edge margin */
+    gap: 0.8rem; /* Slightly tighter gap for small screens */
+  }
+  .logo-text { font-size: 1rem; } /* Scale down logo text */
+
+  /* Cards Optimization: Max Width 320px & Padding */
+  .stat-card, 
+  .service-card, 
+  .feature-item, 
+  .contact-form-card,
+  .sobre-badge {
+    padding: 1rem !important; /* 16px padding enforced */
+    max-width: 320px; /* Enforce max width for small screens */
+    margin-inline: auto; /* Center cards if they are narrower than container */
+    width: 100%;
+  }
+  
+  /* Typography Scaling for Cards (Base 14px) */
+  .service-desc, 
+  .feature-desc, 
+  .contact-info-value,
+  .hero-body,
+  .sobre-text {
+    font-size: 0.875rem !important; /* 14px base font */
+    line-height: 1.55;
+  }
+  
+  /* Adjusting Titles in Cards */
+  .service-title, .feature-title {
+    font-size: 1.25rem; /* Smaller titles */
+  }
+  
+  /* Specific Component Adjustments */
+  .feature-item {
+    grid-template-columns: 1fr; /* Stack icon/number and text */
+    gap: 1rem;
+    text-align: center;
+  }
+  .feature-num { margin: 0 auto; }
+  
+  .stat-card {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  
+  .contact-form-card {
+    border-radius: var(--r-xl); /* Slightly less round on mobile */
+  }
+  
+  /* Form Inputs */
+  .form-input, .form-textarea {
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+  }
 }
 @media (max-width: 640px) {
   .services-grid  { grid-template-columns: 1fr; }
